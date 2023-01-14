@@ -1,4 +1,4 @@
-# ECE408
+# ECE408 Applied Parallel Programming
 
 MP0: Device Query
 MP1: Vector Addition
