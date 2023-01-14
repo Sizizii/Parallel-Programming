@@ -13,7 +13,7 @@ MP7: Sparse Matrix Multiply
 Project: Implementation and optimization of the forward-pass of a CNN using CUDA. Optimizations include:
 * Tiled shared memory convolution
 * Weight matrix (kernel values) in constant memory
-* Fixed point (FP16) arithmetic.
+* Fixed point (FP16) arithmetic
 * Sweeping various parameters to find best values (block sizes, amount of thread coarsening)
 * Input channel reduction: tree
 * Input channel reduction: atomics
