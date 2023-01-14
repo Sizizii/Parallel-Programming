@@ -1,49 +1,19 @@
-# ECE408 Fall 2022
+# ECE408
 
-Welcome to ECE408 / CS483 / CSE408 Fall 2022!
+MP0: Device Query
+MP1: Vector Addition
+MP2: Simple Matrix Multiply
+MP3: Tiled Matrix Multiply
+MP4: 3D Convolution
+MP5.1: List Reduction
+MP5.2: Scan
+MP6: Histogramming
+MP7: Sparse Matrix Multiply
 
-Checkout the [Introduction to RAID](https://drive.google.com/file/d/1t6-uPgbCxi5zx0FKKG15nanXt7NX8zCP/view?usp=sharing) PDF. This document explains the RAI/RAID organization and options. Note, some of the more advanced options like using an exclusive queue will not be available until it is time to work on the project.
-
-# Install and Setup
-
-Clone this repository to get the project folder.
-
-    git clone https://github.com/aschuh703/ECE408.git
-
-
-Download the RAI binary for your platform below.
-
-[Linux and Darwin RAI binaries](https://drive.google.com/drive/folders/1Pp84x3So9OEHUwRHQVZcRP441wRsO-UV)
-
-In the documentation below, we refer to RAI as the RAI binary. Either rename your binary to `rai` or substitute the downloaded name when executing. When executing, you will need to include the full path to RAI or add RAI's location to your `$PATH`.
-
-Finally, the downloaded file will not have execute privileges. Use the `chmod +x rai` command to make the file executable.
-
-You should have received a `.rai_profile` file by email. Do not share your .rai_profile with anyone. 
-Put that file in `~/.rai_profile`.
-Your `.rai_profile` should look something like this (indented with spaces!). The following profile is just a sample. Your actual profile may contain other fields like team and role.
-
-    profile:
-        firstname: <your-given-name>
-        lastname: <your-surname>
-        username: <your-username>
-        email: <your-institution-email>
-        access_key: <your-access-key>
-        secret_key: <your-secret-key>
-        affiliation: <your-affiliation>
-
-To test the configurations, execute RAI with the lab0 (MP0). For example, if you are in the parent directory of this repo, you will run lab0 (MP0) like:
-
-```bash
-/your/path/to/rai/rai -p ./MP0
-```
-Alternatively, if you have added RAI's location to your `$PATH`, simply run:
-```bash
-rai -p ./MP0
-```
-
-### Windows
-
-****
-On Windows, you'll need to install WSL and a virtual linux OS. Several Linux versions are available
-through the Microsoft Store.
+Project: Implementation and optimization of the forward-pass of a CNN using CUDA. Optimizations include:
+* Tiled shared memory convolution
+* Weight matrix (kernel values) in constant memory
+* Fixed point (FP16) arithmetic.
+* Sweeping various parameters to find best values (block sizes, amount of thread coarsening)
+* Input channel reduction: tree
+* Input channel reduction: atomics
